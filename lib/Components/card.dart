@@ -5,12 +5,13 @@ class Cardcom extends StatelessWidget {
   final Icon?  iconName;
   final Color? cardColor;
   final Color? textColor;
-  const Cardcom({super.key, required this.imageUrl, this.iconName,this.cardColor,this.textColor});
+  final VoidCallback? onClick;
+  const Cardcom({super.key, required this.imageUrl, this.iconName,this.cardColor,this.textColor,this.onClick});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onClick,
       child: Container(
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -25,7 +26,7 @@ class Cardcom extends StatelessWidget {
             Image.asset(
               imageUrl,
               width: 350,
-              height: 300,
+              height: 240,
               fit: BoxFit.fill,
             ),
             SizedBox(height: 10),
